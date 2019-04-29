@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-26 17:18:24
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 15:57:20
+ * @Last Modified time: 2019-04-29 18:42:59
  */
 
 import React, {Component} from 'react';
@@ -77,7 +77,6 @@ class HomeMenu extends Component {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        borderBottomWidth: 0.5,
     },
     itemsView: {
         flexDirection: 'row',

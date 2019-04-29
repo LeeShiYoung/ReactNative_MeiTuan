@@ -111407,13 +111407,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
       _this._renderSectionHeader = function (_ref) {
         var section = _ref.section;
-        console.log('🍎🍎🍎🍎🍎');
-        console.log(section);
         return _react.default.createElement(_HomeSectionHeader.default, {
           title: section.title,
+          key: section.title,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 54
           }
         });
       };
@@ -111423,7 +111422,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         return _react.default.createElement(_reactNative.Text, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 57
           }
         }, title);
       };
@@ -114900,8 +114899,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var styles = _reactNative.StyleSheet.create({
     container: {
-      backgroundColor: 'white',
-      borderBottomWidth: 0.5
+      backgroundColor: 'white'
     },
     itemsView: {
       flexDirection: 'row',

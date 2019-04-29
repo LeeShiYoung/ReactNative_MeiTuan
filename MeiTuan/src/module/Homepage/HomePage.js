@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-25 18:48:57
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 18:34:28
+ * @Last Modified time: 2019-04-29 18:42:09
  */
 
 import React, {Component} from 'react';
@@ -51,9 +51,7 @@ class HomePage extends Component {
     }
 
     _renderSectionHeader = ({section}) => {
-        console.log('🍎🍎🍎🍎🍎');
-        console.log(section);
-    return <HomeSectionHeader title={section.title}/>
+    return <HomeSectionHeader title={section.title} key={section.title}/>
     };
 
     _renderItem = ({title}) => (<Text>{title}</Text>);
