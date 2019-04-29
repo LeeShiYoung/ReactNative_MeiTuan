@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-25 18:48:57
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 21:16:50
+ * @Last Modified time: 2019-04-29 21:57:46
  */
 
 import React, {Component} from 'react';
@@ -15,7 +15,7 @@ import HomeMenu from './HomeMenu';
 import color from '../../Common/color';
 import HomeSectionHeader from './HomeSectionHeader';
 import HomeCell from './HomeCell';
-import Separator from '../../Component/Separator';
+import Separator from '../../Component/Separator'
 
 class HomePage extends Component {
 
@@ -42,26 +42,31 @@ class HomePage extends Component {
             <View style={styles.container}>
                 <SectionList
                     style={styles.list}
-                    ListHeaderComponent={<HomeMenu/>}
+                    ListHeaderComponent={< HomeMenu />}
                     sections={sections}
                     renderSectionHeader={this._renderSectionHeader}
                     renderItem={this._renderItem}
-                    SectionSeparatorComponent={<Separator/>}/>
+                    keyExtractor={this._keyExtractor}
+                    ItemSeparatorComponent={this._separatorComponent}/>
 
             </View>
         );
     }
 
-    _renderSectionHeader = ({section}) => (<HomeSectionHeader title={section.title} key={section.title}/>)
+    
+    _renderSectionHeader = ({section}) => (<HomeSectionHeader title={section.title}/>)
+
+    _keyExtractor = (item, index) => index;
 
     _renderItem = ({item}) => (<HomeCell
         info={{
         title: item.author_name,
         subTitle: item.title,
         price: item.date,
-        icon: item.thumbnail_pic_s
-    }}
-        key={item.uniquekey}/>);
+        icon: item.thumbnail_pic_s  
+    }}/>);
+
+    _separatorComponent = () => (<Separator/>);
 }
 
 const styles = StyleSheet.create({
