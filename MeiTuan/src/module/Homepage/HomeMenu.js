@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-26 17:18:24
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 18:42:59
+ * @Last Modified time: 2019-04-29 21:12:51
  */
 
 import React, {Component} from 'react';
@@ -13,7 +13,6 @@ import common from '../../Common/common';
 import {connect} from 'react-redux'
 import color from '../../Common/color';
 import {updateHomePageMenuPage} from './actions';
-import HomeGridItem from './HomeGridItem';
 import HomeGridView from './HomeGridView';
 
 class HomeMenu extends Component {
@@ -65,13 +64,7 @@ class HomeMenu extends Component {
         if (currentPage !== page) {
             setCurrentPage(page);
         }
-
-        const ws = new WebSocket('');
-        ws.onmessage = () => {
-
-        }
     }
-
 }
 
 const styles = StyleSheet.create({

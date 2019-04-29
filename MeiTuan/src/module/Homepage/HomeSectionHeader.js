@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-29 16:00:31
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 18:38:09
+ * @Last Modified time: 2019-04-29 21:09:08
  */
 
 import React, {Component} from 'react';
@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: common.screen.width,
         height: 44,
+        borderBottomWidth: 0.5,
+        borderBottomColor: color.paper,
     },
     text: {
         color: color.gray,

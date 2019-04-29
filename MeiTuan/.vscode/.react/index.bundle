@@ -111376,6 +111376,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _HomeSectionHeader = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[16], "./HomeSectionHeader"));
 
+  var _HomeCell = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[17], "./HomeCell"));
+
+  var _Separator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[18], "../../Component/Separator"));
+
   var _jsxFileName = "/Users/young_code/Documents/ReactNativeProject/ReactNative_MeiTuan/MeiTuan/src/module/Homepage/HomePage.js";
   var _components = {
     HomePage: {
@@ -111412,19 +111416,26 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           key: section.title,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 55
           }
         });
       };
 
       _this._renderItem = function (_ref2) {
-        var title = _ref2.title;
-        return _react.default.createElement(_reactNative.Text, {
+        var item = _ref2.item;
+        return _react.default.createElement(_HomeCell.default, {
+          info: {
+            title: item.author_name,
+            subTitle: item.title,
+            price: item.date,
+            icon: item.thumbnail_pic_s
+          },
+          key: item.uniquekey,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 57
           }
-        }, title);
+        });
       };
 
       _this.state = {};
@@ -111444,22 +111455,28 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 42
           }
         }, _react.default.createElement(_reactNative.SectionList, {
           style: styles.list,
           ListHeaderComponent: _react.default.createElement(_HomeMenu.default, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 43
+              lineNumber: 45
             }
           }),
           sections: sections,
           renderSectionHeader: this._renderSectionHeader,
           renderItem: this._renderItem,
+          SectionSeparatorComponent: _react.default.createElement(_Separator.default, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 49
+            }
+          }),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 43
           }
         }));
       }
@@ -111473,14 +111490,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       headerTitle: _react.default.createElement(_SearchBar.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 23
         }
       }),
       headerRight: _react.default.createElement(_NavigationItem.default, {
-        icon: _$$_REQUIRE(_dependencyMap[17], "../../../src/img/mine/icon_navigation_item_message_white.png"),
+        icon: _$$_REQUIRE(_dependencyMap[19], "../../../src/img/mine/icon_navigation_item_message_white.png"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 24
         }
       })
     };
@@ -111514,7 +111531,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default2 = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomePage);
 
   exports.default = _default2;
-},700,[1,569,22,23,36,39,42,53,197,2,701,724,725,767,768,765,774,775],"src/module/Homepage/HomePage.js");
+},700,[1,569,22,23,36,39,42,53,197,2,701,724,725,767,768,765,774,784,775],"src/module/Homepage/HomePage.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114751,9 +114768,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _actions = _$$_REQUIRE(_dependencyMap[15], "./actions");
 
-  var _HomeGridItem = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[16], "./HomeGridItem"));
-
-  var _HomeGridView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[17], "./HomeGridView"));
+  var _HomeGridView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[16], "./HomeGridView"));
 
   var _jsxFileName = "/Users/young_code/Documents/ReactNativeProject/ReactNative_MeiTuan/MeiTuan/src/module/Homepage/HomeMenu.js";
   var _components = {
@@ -114801,10 +114816,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         if (currentPage !== page) {
           setCurrentPage(page);
         }
-
-        var ws = new WebSocket('');
-
-        ws.onmessage = function () {};
       };
 
       return _this;
@@ -114825,7 +114836,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             key: title,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 25
+              lineNumber: 24
             }
           });
         });
@@ -114840,7 +114851,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             key: i,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 31
+              lineNumber: 30
             }
           }, itemSlices);
 
@@ -114851,7 +114862,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 37
           }
         }, _react.default.createElement(_reactNative.ScrollView, {
           horizontal: true,
@@ -114860,7 +114871,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           onScroll: this._onScroll,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 38
           }
         }, menuViews), _react.default.createElement(_reactNativePageControl.default, {
           style: styles.pageControl,
@@ -114870,24 +114881,24 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           pageIndicatorTintColor: _color.default.gray,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 45
           }
         }), _react.default.createElement(_reactNative.View, {
           style: styles.line,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 51
           }
         }), _react.default.createElement(_HomeGridView.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 52
           }
         }), _react.default.createElement(_reactNative.View, {
           style: styles.line,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 53
           }
         }));
       }
@@ -114934,7 +114945,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default2 = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeMenu);
 
   exports.default = _default2;
-},768,[1,569,22,23,36,39,42,53,197,2,769,771,727,701,765,725,772,773],"src/module/Homepage/HomeMenu.js");
+},768,[1,569,22,23,36,39,42,53,197,2,769,771,727,701,765,725,773],"src/module/Homepage/HomeMenu.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var PageControl = _$$_REQUIRE(_dependencyMap[0], "./PageControl");
 
@@ -115409,7 +115420,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       flexDirection: 'row',
       flexWrap: 'wrap',
       width: _common.default.screen.width,
-      height: 180
+      height: 180,
+      marginBottom: 10
     }
   });
 
@@ -115524,7 +115536,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       justifyContent: 'center',
       backgroundColor: 'white',
       width: _common.default.screen.width,
-      height: 44
+      height: 44,
+      borderBottomWidth: 0.5,
+      borderBottomColor: _color.default.paper
     },
     text: {
       color: _color.default.gray,
@@ -116597,6 +116611,170 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   "displayName": "MeiTuan"
 };
 },783,[],"app.json");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+
+  var _common = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "../../Common/common"));
+
+  var _color = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "../../Common/color"));
+
+  var _jsxFileName = "/Users/young_code/Documents/ReactNativeProject/ReactNative_MeiTuan/MeiTuan/src/module/Homepage/HomeCell.js";
+  var _components = {
+    HomeCell: {
+      displayName: "HomeCell"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "src/module/Homepage/HomeCell.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var HomeCell = function (_Component) {
+    (0, _inherits2.default)(HomeCell, _Component);
+
+    function HomeCell(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, HomeCell);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(HomeCell).call(this, props));
+      _this.state = {};
+      return _this;
+    }
+
+    (0, _createClass2.default)(HomeCell, [{
+      key: "render",
+      value: function render() {
+        var _this$props$info = this.props.info,
+            title = _this$props$info.title,
+            subTitle = _this$props$info.subTitle,
+            price = _this$props$info.price,
+            icon = _this$props$info.icon;
+        return _react.default.createElement(_reactNative.View, {
+          style: styles.container,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          }
+        }, _react.default.createElement(_reactNative.Image, {
+          style: styles.image,
+          source: {
+            uri: icon
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          }
+        }), _react.default.createElement(_reactNative.View, {
+          style: styles.right,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.title,
+          ellipsizeMode: 'middle',
+          numberOfLines: 1,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26
+          }
+        }, title), _react.default.createElement(_reactNative.Text, {
+          style: styles.subTitle,
+          ellipsizeMode: 'tail',
+          numberOfLines: 1,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29
+          }
+        }, subTitle), _react.default.createElement(_reactNative.Text, {
+          style: styles.price,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32
+          }
+        }, price)));
+      }
+    }]);
+    return HomeCell;
+  }(_react.Component);
+
+  HomeCell = _wrapComponent("HomeCell")(HomeCell);
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      backgroundColor: 'white',
+      flexDirection: 'row'
+    },
+    right: {
+      marginTop: 15,
+      marginBottom: 15,
+      marginLeft: 10,
+      width: _common.default.screen.width - 40 - _common.default.screen.width / 5
+    },
+    image: {
+      marginLeft: 15,
+      marginTop: 15,
+      marginBottom: 15,
+      width: _common.default.screen.width / 5,
+      height: _common.default.screen.width / 5,
+      borderRadius: 5
+    },
+    title: {
+      fontSize: 15,
+      color: '#222222',
+      fontWeight: 'bold',
+      marginBottom: 5,
+      height: 15
+    },
+    subTitle: {
+      marginTop: 5,
+      fontSize: 14,
+      color: '#222222',
+      height: 14
+    },
+    price: {
+      marginTop: 8,
+      color: _color.default.primary,
+      fontWeight: 'bold',
+      fontSize: 14
+    }
+  });
+
+  var _default2 = HomeCell;
+  exports.default = _default2;
+},784,[1,569,22,23,36,39,42,53,197,2,727,765],"src/module/Homepage/HomeCell.js");
 __r(92);
 __r(0);
 //# sourceMappingURL=index.map

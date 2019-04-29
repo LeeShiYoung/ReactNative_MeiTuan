@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-25 18:48:57
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 18:42:09
+ * @Last Modified time: 2019-04-29 21:16:50
  */
 
 import React, {Component} from 'react';
@@ -14,6 +14,8 @@ import NavigationItem from '../../Component/NavigationItem';
 import HomeMenu from './HomeMenu';
 import color from '../../Common/color';
 import HomeSectionHeader from './HomeSectionHeader';
+import HomeCell from './HomeCell';
+import Separator from '../../Component/Separator';
 
 class HomePage extends Component {
 
@@ -40,21 +42,26 @@ class HomePage extends Component {
             <View style={styles.container}>
                 <SectionList
                     style={styles.list}
-                    ListHeaderComponent={< HomeMenu />}
+                    ListHeaderComponent={<HomeMenu/>}
                     sections={sections}
                     renderSectionHeader={this._renderSectionHeader}
                     renderItem={this._renderItem}
-                    />
+                    SectionSeparatorComponent={<Separator/>}/>
 
             </View>
         );
     }
 
-    _renderSectionHeader = ({section}) => {
-    return <HomeSectionHeader title={section.title} key={section.title}/>
-    };
+    _renderSectionHeader = ({section}) => (<HomeSectionHeader title={section.title} key={section.title}/>)
 
-    _renderItem = ({title}) => (<Text>{title}</Text>);
+    _renderItem = ({item}) => (<HomeCell
+        info={{
+        title: item.author_name,
+        subTitle: item.title,
+        price: item.date,
+        icon: item.thumbnail_pic_s
+    }}
+        key={item.uniquekey}/>);
 }
 
 const styles = StyleSheet.create({

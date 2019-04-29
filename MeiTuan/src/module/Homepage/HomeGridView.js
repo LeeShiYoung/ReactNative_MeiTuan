@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-28 16:14:14
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-28 17:06:16
+ * @Last Modified time: 2019-04-29 21:10:56
  */
 
 import React, {Component} from 'react';
@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         width: common.screen.width,
-        height: 180
+        height: 180,
+        marginBottom: 10,
     }
 })
 
