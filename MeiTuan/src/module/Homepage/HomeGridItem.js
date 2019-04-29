@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-28 16:07:54
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-28 16:59:10
+ * @Last Modified time: 2019-04-29 22:16:32
  */
 
 import React, {Component} from 'react';
@@ -28,7 +28,7 @@ class HomeGridItem extends Component {
                         {subTitle}
                     </Text>
                 </View>
-                <Image style={styles.image}/>
+                <Image style={styles.image} source={{uri: icon}}/>
             </View>
         );
     }
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
         height: common.screen.width / 5,
         backgroundColor: 'blue',
         margin: 10,
+        borderRadius: common.screen.width / 5 / 2,
     }
 
 })

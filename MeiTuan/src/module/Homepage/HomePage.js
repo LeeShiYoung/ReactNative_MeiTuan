@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-25 18:48:57
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 21:57:46
+ * @Last Modified time: 2019-04-29 22:05:17
  */
 
 import React, {Component} from 'react';
@@ -53,7 +53,6 @@ class HomePage extends Component {
         );
     }
 
-    
     _renderSectionHeader = ({section}) => (<HomeSectionHeader title={section.title}/>)
 
     _keyExtractor = (item, index) => index;

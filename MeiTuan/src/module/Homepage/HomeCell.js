@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-29 20:28:43
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 21:08:10
+ * @Last Modified time: 2019-04-29 22:11:43
  */
 
 import React, {Component} from 'react';
@@ -18,7 +18,7 @@ class HomeCell extends Component {
 
     render() {
         const {title, subTitle, price, icon} = this.props.info;
-        
+        console.log(icon);
         return (
             <View style={styles.container}>
                 <Image style={styles.image} source={{uri:icon}}/>

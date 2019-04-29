@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-26 10:03:48
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 15:51:09
+ * @Last Modified time: 2019-04-29 22:11:14
  */
 
 import {
@@ -19,7 +19,7 @@ export const homePageFetch = (str) => ({
   payload: API.get('/index', {
     baseURL: 'http://v.juhe.cn/toutiao',
     params: {
-      'type': 'toutiao',
+      'type': 'yule',
       'key': 'c470dae6931d85934a3ee3ec566485ef'
     }
   })
