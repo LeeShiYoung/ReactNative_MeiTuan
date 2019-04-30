@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-25 18:48:57
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-30 11:10:48
+ * @Last Modified time: 2019-04-30 12:53:58
  */
 
 import React, {Component} from 'react';
@@ -64,9 +64,13 @@ class HomePage extends Component {
         subTitle: item.title,
         price: item.date,
         icon: item.thumbnail_pic_s
-    }}/>);
+    }} onPress={this._cellonPress}/>);
 
     _separatorComponent = () => (<Separator/>);
+
+    _cellonPress = () => {
+        this.props.navigation.navigate('WebView')
+    }
 }
 
 const styles = StyleSheet.create({

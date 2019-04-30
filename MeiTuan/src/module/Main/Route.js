@@ -2,56 +2,68 @@
  * @Author: Young
  * @Date: 2019-04-25 19:03:57
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-30 11:04:51
+ * @Last Modified time: 2019-04-30 14:07:28
  */
-import {
-    createStackNavigator,
-    createBottomTabNavigator,
-    createAppContainer
-} from 'react-navigation';
+import {createStackNavigator, createBottomTabNavigator, createAppContainer} from 'react-navigation';
 import {Platform} from 'react-native';
-import HomePage from '../Homepage/index';
+import {HomePage, NativeWebView} from '../Homepage/index';
 import Discover from '../Discover/index';
 import color from '../../Common/color';
 
-
-const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
+const TITLE_OFFSET = Platform.OS === 'ios'
+    ? 70
+    : 56;
 const HomepageStack = createStackNavigator({
     Home: {
-        screen: HomePage.component,
-        navigationOptions: ({ navigation }) => ({
+        screen: HomePage,
+        navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: color.primary,
+                backgroundColor: color.primary
             },
-            headerTitleContainerStyle:{
+            headerTitleContainerStyle: {
                 left: TITLE_OFFSET,
-                right: TITLE_OFFSET,
-              }
+                right: TITLE_OFFSET
+            },
+        })
+    },
+
+    WebView: {
+        screen: NativeWebView,
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: 'white'
+            },
         })
     }
+}, {
+    initialRouteName: 'Home'
 });
 
 const DiscoverStack = createStackNavigator({
     Discover: {
         screen: Discover.component,
-        navigationOptions: ({ navigation }) => ({
+        navigationOptions: ({navigation}) => ({
             headerStyle: {
                 backgroundColor: color.primary,
                 textAlign: 'center'
-            },
+            }
         })
     }
 });
 
 const Route = createAppContainer(createBottomTabNavigator({
-    HomepageStack: {screen: HomepageStack,
+    HomepageStack: {
+        screen: HomepageStack,
         navigationOptions: {
             tabBarLabel: '首页'
-        }},
-    DiscoverStack: {screen: DiscoverStack,
+        }
+    },
+    DiscoverStack: {
+        screen: DiscoverStack,
         navigationOptions: {
             tabBarLabel: '发现'
-        }}
+        }
+    }
 }));
 
 export default Route;
