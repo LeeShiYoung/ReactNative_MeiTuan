@@ -1,6 +1,6 @@
 
-##### 详解
-###### [](https://juejin.im/post/5cc814d86fb9a031f90d60b8)
+
+###### [详解](https://juejin.im/post/5cc814d86fb9a031f90d60b8)
 - actionType
 ```
 export const HOMEPAGE_SHOWSEARCHBAR = 'HOMEPAGE/SHOWSEARCHBAR';
