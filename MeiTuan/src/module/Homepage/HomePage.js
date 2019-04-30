@@ -2,11 +2,11 @@
  * @Author: Young
  * @Date: 2019-04-25 18:48:57
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 22:05:17
+ * @Last Modified time: 2019-04-30 11:10:48
  */
 
 import React, {Component} from 'react';
-import {View, SectionList, StyleSheet, Text} from 'react-native';
+import {View, SectionList, StyleSheet, Platform} from 'react-native';
 import {connect} from 'react-redux';
 import SearchBar from '../../Component/SearchBar';
 import {homePageFetch} from './actions';
@@ -22,7 +22,8 @@ class HomePage extends Component {
     static navigationOptions = ({navigation}) => ({
         headerTitle: <SearchBar/>,
         headerRight: <NavigationItem
-                icon={require('../../../src/img/mine/icon_navigation_item_message_white.png')}/>
+            icon={require('../../../src/img/mine/icon_navigation_item_message_white.png')}/>,
+        
     });
 
     constructor(props) {
@@ -62,7 +63,7 @@ class HomePage extends Component {
         title: item.author_name,
         subTitle: item.title,
         price: item.date,
-        icon: item.thumbnail_pic_s  
+        icon: item.thumbnail_pic_s
     }}/>);
 
     _separatorComponent = () => (<Separator/>);

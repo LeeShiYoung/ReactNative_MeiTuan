@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-29 20:28:43
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 22:11:43
+ * @Last Modified time: 2019-04-30 10:15:57
  */
 
 import React, {Component} from 'react';
@@ -18,7 +18,6 @@ class HomeCell extends Component {
 
     render() {
         const {title, subTitle, price, icon} = this.props.info;
-        console.log(icon);
         return (
             <View style={styles.container}>
                 <Image style={styles.image} source={{uri:icon}}/>
@@ -65,13 +64,11 @@ const styles = StyleSheet.create({
         color: '#222222',
         fontWeight: 'bold',
         marginBottom: 5,
-        height: 15
     },
     subTitle: {
         marginTop: 5,
         fontSize: 14,
         color: '#222222',
-        height: 14
     },
     price: {
         marginTop: 8,

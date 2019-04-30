@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-28 16:14:14
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 21:10:56
+ * @Last Modified time: 2019-04-30 10:36:01
  */
 
 import React, {Component} from 'react';
@@ -30,6 +30,7 @@ class HomeGridView extends Component {
             title={grid.title}
             subTitle={grid.subTitle}
             icon={grid.icon}
+            color={grid.color}
             key={i}/>));
 
         return (
@@ -45,8 +46,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         width: common.screen.width,
-        height: 180,
-        marginBottom: 10,
     }
 })
 

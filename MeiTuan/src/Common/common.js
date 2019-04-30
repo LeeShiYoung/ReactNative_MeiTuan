@@ -2,7 +2,7 @@
  * @Author: Young 
  * @Date: 2019-04-25 19:20:01 
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 22:16:57
+ * @Last Modified time: 2019-04-30 10:24:53
  */
 
 import {
@@ -92,26 +92,26 @@ export default {
         {
             title: '免费拍',
             subTitle: '拍照写真',
-            color: '',
+            color: '#ff8800',
             icon: 'http://06imgmini.eastday.com/mobile/20190429/20190429220446_71b49152dfc9975ccbeddaf9c36e74fb_1_mwpm_03200403.jpg'
         },
         {
             title: '大片特惠',
             subTitle: '复仇者联盟4',
             icon: 'http://00imgmini.eastday.com/mobile/20190429/20190429220405_e5268b3a6ac7771cc35c4891156bbc2e_2_mwpm_03200403.jpg',
-            color: ''
+            color: '#ff0088'
         },
         {
             title: '特价日',
             subTitle: '跟团游清仓',
-            color: '',
+            color: '#00ff00',
             icon: 'http://02imgmini.eastday.com/mobile/20190429/20190429215825_2f7c27ee796fefa928c93795293e6b9b_7_mwpm_03200403.jpg'
         },
         {
             title: '今日推荐',
             subTitle: '品质生活指南',
             icon: 'http://06imgmini.eastday.com/mobile/20190429/2019042921_7911776f47f9482092bfab3e3f623b68_4405_cover_mwpm_03200403.jpg',
-            color: ''
+            color: '#00ffff'
         }
     ]
 }

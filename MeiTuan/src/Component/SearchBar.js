@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-26 12:09:51
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-26 22:47:29
+ * @Last Modified time: 2019-04-30 10:55:11
  */
 
 import React, {Component} from 'react';
@@ -37,11 +37,13 @@ class SearchBar extends Component {
 const styles = StyleSheet.create({
     searchBar: {
         flexDirection: 'row',
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'white',
         width: common.screen.width * 0.7,
         height: 30,
         borderRadius: 19,
+        alignSelf: 'center',
     },
 
     searchIcon: {
@@ -63,7 +65,8 @@ const mapStateToProps = (state) => ({searchBarText: state.homepageReudcer.search
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     fetchSearchBar: () => {
-        dispatch(searchBarFetch('abcdabcdabcdabcdabcdabcdabcdabcdabcd'));
+        console.log(ownProps);
+        dispatch(searchBarFetch('Young'));
     }
 });
 

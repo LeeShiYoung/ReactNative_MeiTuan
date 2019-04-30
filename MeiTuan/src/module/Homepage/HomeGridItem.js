@@ -2,7 +2,7 @@
  * @Author: Young
  * @Date: 2019-04-28 16:07:54
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-29 22:16:32
+ * @Last Modified time: 2019-04-30 10:27:19
  */
 
 import React, {Component} from 'react';
@@ -17,11 +17,11 @@ class HomeGridItem extends Component {
     }
 
     render() {
-        const {title, subTitle, icon} = this.props;
+        const {title, subTitle, icon, color} = this.props;
         return (
             <View style={styles.container}>
                 <View style={styles.left}>
-                    <Text style={styles.textTop}>
+                    <Text style={[styles.textTop, {color: color}]}>
                         {title}
                     </Text>
                     <Text style={styles.textBottom}>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     image: {
         width: common.screen.width / 5,
         height: common.screen.width / 5,
-        backgroundColor: 'blue',
+        backgroundColor: color.paper,
         margin: 10,
         borderRadius: common.screen.width / 5 / 2,
     }
