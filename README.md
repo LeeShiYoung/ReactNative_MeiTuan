@@ -1,4 +1,4 @@
-
+![](https://user-gold-cdn.xitu.io/2019/5/1/16a7380734ed8dae?w=1952&h=1690&f=png&s=1548614)
 
 ###### [详解](https://juejin.im/post/5cc814d86fb9a031f90d60b8)
 - actionType
