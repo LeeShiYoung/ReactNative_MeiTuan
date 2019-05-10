@@ -50,7 +50,7 @@ const DiscoverStack = createStackNavigator({
     }
 });
 
-const Route = createAppContainer(createBottomTabNavigator({
+const AppRouteConfigs = createBottomTabNavigator({
     HomepageStack: {
         screen: HomepageStack,
         navigationOptions: {
@@ -63,6 +63,6 @@ const Route = createAppContainer(createBottomTabNavigator({
             tabBarLabel: '发现'
         }
     }
-}));
+})
 
-export default Route;
+export default AppRouteConfigs;

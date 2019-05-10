@@ -1,8 +1,14 @@
 /*
  * @Author: Young 
+ * @Date: 2019-05-10 19:39:47 
+ * @Last Modified by:   Young 
+ * @Last Modified time: 2019-05-10 19:39:47 
+ */
+/*
+ * @Author: Young 
  * @Date: 2019-04-26 10:19:56 
  * @Last Modified by: Young
- * @Last Modified time: 2019-04-28 17:54:14
+ * @Last Modified time: 2019-05-05 16:03:37
  */
 
 import {
@@ -14,12 +20,21 @@ import homepageReudcer from './module/Homepage/reducer';
 
 import logger from 'redux-logger'
 import reducepromisemiddleware from 'redux-promise-middleware';
-// import axiosMiddleware from 'redux-axios-middleware';
+import {
+    createReactNavigationReduxMiddleware,
+    createNavigationReducer,
+  } from 'react-navigation-redux-helpers';
+import AppRouteConfigs from './module/Main/Route';
 
-
+const navigationReducer = createNavigationReducer(AppRouteConfigs);
 
 const reducers = combineReducers({
-    homepageReudcer
+    homepageReudcer,
+    navigationReducer
 });
 
-export default createStore(reducers, applyMiddleware(reducepromisemiddleware, logger));
+const reactNavigationReduxMiddleware = createReactNavigationReduxMiddleware(
+    state => state.nav,
+  );
+
+export default createStore(reducers, applyMiddleware(reducepromisemiddleware, reactNavigationReduxMiddleware, logger));
