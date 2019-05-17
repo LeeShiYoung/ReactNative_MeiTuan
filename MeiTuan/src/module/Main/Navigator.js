@@ -23,7 +23,8 @@ const HomepageStack = createStackNavigator({
                 left: TITLE_OFFSET,
                 right: TITLE_OFFSET
             },
-        })
+        }),
+        path: 'HomePage',
     },
 
     WebView: {
@@ -50,7 +51,7 @@ const DiscoverStack = createStackNavigator({
     }
 });
 
-const AppRouteConfigs = createBottomTabNavigator({
+const Navigator = createBottomTabNavigator({
     HomepageStack: {
         screen: HomepageStack,
         navigationOptions: {
@@ -65,4 +66,4 @@ const AppRouteConfigs = createBottomTabNavigator({
     }
 })
 
-export default AppRouteConfigs;
+export default Navigator;

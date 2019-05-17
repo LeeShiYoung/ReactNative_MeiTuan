@@ -69,6 +69,7 @@ class HomePage extends Component {
     _separatorComponent = () => (<Separator/>);
 
     _cellonPress = () => {
+        console.log(this.props)
         this.props.navigation.navigate('WebView')
     }
 }
@@ -82,7 +83,10 @@ const styles = StyleSheet.create({
     }
 })
 
-const mapStateToProps = (state) => ({sections: state.homepageReudcer.homepage.sections});
+const mapStateToProps = (state) => (
+    {sections: state.homepageReudcer.homepage.sections}
+    
+    );
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     homePageFetch: () => {
