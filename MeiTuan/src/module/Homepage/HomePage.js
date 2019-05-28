@@ -64,14 +64,9 @@ class HomePage extends Component {
         subTitle: item.title,
         price: item.date,
         icon: item.thumbnail_pic_s
-    }} onPress={this._cellonPress}/>);
+    }} onPress={this.props.cellonPress}/>);
 
     _separatorComponent = () => (<Separator/>);
-
-    _cellonPress = () => {
-        console.log(this.props)
-        this.props.navigation.navigate('WebView')
-    }
 }
 
 const styles = StyleSheet.create({
@@ -91,6 +86,9 @@ const mapStateToProps = (state) => (
 const mapDispatchToProps = (dispatch, ownProps) => ({
     homePageFetch: () => {
         dispatch(homePageFetch(''));
+    },
+    cellonPress: () => {
+        ownProps.navigation.navigate('WebView');
     }
 });
 

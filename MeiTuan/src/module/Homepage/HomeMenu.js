@@ -93,4 +93,4 @@ const mapDispatchToProps = (dispatch) => ({
     }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeMenu)
+export default connect(mapStateToProps, mapDispatchToProps)(HomeMenu);
