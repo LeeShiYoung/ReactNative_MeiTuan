@@ -1,15 +1,10 @@
 /*
- * @Author: Young 
- * @Date: 2019-05-10 19:39:47 
- * @Last Modified by:   Young 
- * @Last Modified time: 2019-05-10 19:39:47 
+ * @Author: _coderYoung
+ * @Date: 2019-05-11 20:57:05
+ * @LastEditTime: 2019-05-17 18:30:10
+ * @LastEditors: _coderYoung
  */
-/*
- * @Author: Young 
- * @Date: 2019-04-26 10:19:56 
- * @Last Modified by: Young
- * @Last Modified time: 2019-05-05 16:03:37
- */
+
 
 import {
     createStore,
@@ -24,17 +19,16 @@ import {
     createReactNavigationReduxMiddleware,
     createNavigationReducer,
   } from 'react-navigation-redux-helpers';
-import AppRouteConfigs from './module/Main/Route';
+import AppRouteConfigs from './module/Main/Navigator';
+import  navigationReducer from "../src/module/Main/NavigationReducer";
 
-const navigationReducer = createNavigationReducer(AppRouteConfigs);
+// const navigationReducer = createNavigationReducer(AppRouteConfigs);
 
 const reducers = combineReducers({
     homepageReudcer,
     navigationReducer
 });
 
-const reactNavigationReduxMiddleware = createReactNavigationReduxMiddleware(
-    state => state.nav,
-  );
+const reactNavigationReduxMiddleware = createReactNavigationReduxMiddleware( state => state.navigationReducer);
 
 export default createStore(reducers, applyMiddleware(reducepromisemiddleware, reactNavigationReduxMiddleware, logger));

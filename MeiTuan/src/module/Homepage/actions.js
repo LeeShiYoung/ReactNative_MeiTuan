@@ -19,7 +19,7 @@ export const homePageFetch = (str) => ({
   payload: API.get('/index', {
     baseURL: 'http://v.juhe.cn/toutiao',
     params: {
-      'type': 'yule',
+      'type': 'toutiao',
       'key': 'c470dae6931d85934a3ee3ec566485ef'
     }
   })

@@ -8,12 +8,12 @@
 import {
   createReduxContainer,
 } from 'react-navigation-redux-helpers';
-import AppRouteConfigs from './Route';
+import Navigator from './Navigator';
 import {
   connect
 } from 'react-redux';
 
-const AppContainer = createReduxContainer(AppRouteConfigs);
+const AppContainer = createReduxContainer(Navigator);
 
 const mapStateToProps = (state) => ({
   state: state.navigationReducer,
